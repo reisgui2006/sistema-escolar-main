@@ -1,0 +1,213 @@
+/* Reset básico e fonte */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #a8edea, #fed6e3); /* fundo degradê bonito e suave */
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Links topo */
+div > a {
+  text-decoration: none;
+  color: #0052cc;
+  font-weight: 600;
+  margin-right: 12px;
+  transition: color 0.3s ease;
+}
+
+div > a:hover {
+  color: #003d99;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 30px;
+}
+
+/* Botão abrir popup */
+#open-turma-popup,
+#listar-turmas,
+#fechar-lista-turmas {
+  background-color: #3399ff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px 10px 20px 0;
+  display: inline-block;
+}
+
+#open-turma-popup:hover,
+#listar-turmas:hover,
+#fechar-lista-turmas:hover {
+  background-color: #2673cc;
+}
+
+/* Lista de turmas */
+#turmas-lista {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  display: none;
+  color: #333;
+}
+
+#turmas-lista h2 {
+  margin-top: 0;
+  color: #0052cc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#turmas-lista div {
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+#turmas-lista button {
+  background-color: #3399ff;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#turmas-lista button:hover {
+  background-color: #2673cc;
+}
+
+/* Botão excluir dentro da lista */
+#turmas-lista button:last-child {
+  background-color: #cc3333;
+}
+
+#turmas-lista button:last-child:hover {
+  background-color: #992626;
+}
+
+/* Popup comum (cadastro e edição) */
+#turma-popup,
+#edit-turma-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 450px;
+  background: #0052cc;  /* azul forte */
+  color: white;        /* texto branco */
+  padding: 30px 40px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  border-radius: 12px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: none;
+}
+
+/* Títulos dos popups */
+#turma-popup h2,
+#edit-turma-popup h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #cce6ff;  /* azul clarinho */
+  text-align: center;
+}
+
+/* Inputs e selects */
+form input[type="text"],
+form input[type="number"],
+form select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.8px solid #cce6ff;
+  margin-bottom: 18px;
+  transition: border-color 0.3s ease;
+  background-color: #003d99;
+  color: white;
+}
+
+form input[type="text"]::placeholder,
+form input[type="number"]::placeholder {
+  color: #a6c8ff;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form select:focus {
+  outline: none;
+  border-color: #99ccff;
+  box-shadow: 0 0 6px rgba(153,204,255,0.7);
+  background-color: #0047cc;
+}
+
+/* Labels */
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #d0e4ff;
+}
+
+/* Botões nos formulários */
+button {
+  background-color: #3399ff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 6px 4px 20px 0;
+}
+
+button:hover {
+  background-color: #2673cc;
+}
+
+/* Botão fechar (vermelho) */
+form button[type="button"] {
+  background-color: #cc3333;
+}
+
+form button[type="button"]:hover {
+  background-color: #992626;
+}
+
+/* Responsividade simples */
+@media (max-width: 480px) {
+  #turma-popup,
+  #edit-turma-popup {
+    width: 95%;
+    padding: 25px 25px;
+  }
+  
+  #turmas-lista {
+    width: 95%;
+    padding: 20px 20px;
+  }
+}

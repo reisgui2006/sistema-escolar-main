@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro Professor</title>
+  <link rel="stylesheet" href="css/professor.css" />
+</head>
+<body>
+
+  <div>
+    <a href="index.html">Inicio</a> |
+    <a href="gerenciaraluno.html">Aluno</a> |
+    <a href="gerenciarturma.html">Turma</a>
+  </div>
+
+  <h1>Professores</h1>
+
+  <!-- Botão para abrir o pop-up de cadastro -->
+  <button id="open-cadastro-btn">Cadastrar Novo Professor</button>
+
+  <!-- Pop-up cadastro -->
+  <div id="cadastro-popup" class="popup" style="display:none;">
+    <div class="popup-content">
+      <h2>Cadastro do Professor</h2>
+      <form id="professor-form">
+        <label>Nome:
+          <input type="text" name="nome" required />
+        </label>
+        <label>Matéria:
+          <input type="text" name="materia" required />
+        </label>
+        <label>Idade:
+          <input type="number" name="idade" required />
+        </label>
+        <button type="submit">Cadastrar</button>
+        <button type="button" id="close-cadastro-btn">Fechar</button>
+      </form>
+    </div>
+  </div>
+
+  <hr />
+
+  <button id="listar-professor">Listar Professores</button>
+  <button id="fechar-lista" style="display:none;">Fechar Lista</button>
+  <div id="professor-lista"></div>
+
+  <!-- Pop-up para editar professor (igual ao que você já tem) -->
+  <div id="edit-popup" class="popup" style="display:none;">
+    <div class="popup-content">
+      <h2>Editar Professor</h2>
+      <form id="update-form">
+        <label>Nome: <input type="text" name="nome" required /></label>
+        <label>Matéria: <input type="text" name="materia" required /></label>
+        <label>Idade: <input type="number" name="idade" required /></label>
+        <button type="submit">Atualizar</button>
+        <button type="button" id="close-popup">Fechar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/professor.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alunos</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div>
+    <a href="index.html">Inicio</a> |
+    <a href="gerenciarprofessor.html">Professor</a> |
+    <a href="gerenciarturma.html">Turma</a>
+  </div>
+
+  <h1>Gerenciamento de Alunos</h1>
+
+  <!-- Botão para abrir o pop-up de cadastro -->
+  <button id="open-cadastrar-popup">Cadastrar Aluno</button>
+
+  <!-- Pop-up para cadastrar aluno -->
+  <div id="cadastrar-popup" class="popup" style="display:none;">
+    <div class="popup-content">
+      <h2>Cadastrar Aluno</h2>
+      <form id="aluno-form">
+        <label>Nome: <input type="text" name="nome" required></label><br>
+        <label>Data de Nascimento: <input type="date" name="data_nascimento" required></label><br>
+        <label>Nota 1º Semestre: <input type="number" step="0.01" name="nota_primeiro_semestre" required></label><br>
+        <label>Nota 2º Semestre: <input type="number" step="0.01" name="nota_segundo_semestre" required></label><br>
+        <label>ID da Turma: <input type="number" name="turma_id" required></label><br>
+        <button type="submit">Cadastrar Aluno</button>
+        <button type="button" id="close-cadastrar-popup">Fechar</button>
+      </form>
+    </div>
+  </div>
+
+  <hr>
+
+  <button id="listar-alunos">Listar Alunos</button>
+  <button id="fechar-lista" style="display:none;">Fechar Lista</button>
+  <div id="alunos-lista"></div>
+
+  <!-- Pop-up para editar aluno -->
+  <div id="edit-popup" class="popup" style="display:none;">
+    <div class="popup-content">
+      <h2>Editar Aluno</h2>
+      <form id="update-form">
+        <input type="hidden" id="aluno-id">
+        <label>Nome: <input type="text" id="update-nome" required></label><br>
+        <label>Data de Nascimento: <input type="date" id="update-data_nascimento" required></label><br>
+        <label>Nota 1º Semestre: <input type="number" step="0.01" id="update-nota_primeiro_semestre" required></label><br>
+        <label>Nota 2º Semestre: <input type="number" step="0.01" id="update-nota_segundo_semestre" required></label><br>
+        <label>ID da Turma: <input type="number" id="update-turma_id" required></label><br>
+        <button type="submit">Atualizar</button>
+        <button type="button" id="close-popup">Fechar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/alunos.js"></script>
+</body>
+</html>

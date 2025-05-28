@@ -1,0 +1,73 @@
+/* Reset básico e fonte */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #a8edea, #fed6e3); /* fundo degradê bonito e suave */
+  color: #333;
+  line-height: 1.6;
+  padding: 40px 20px;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Título principal */
+h1 {
+  color: #003366;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Container do menu */
+.menu {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 700px;
+  width: 100%;
+}
+
+/* Cada botão/menu item */
+.menu div {
+  background-color: #3399ff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 20px 40px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  flex: 1 1 180px;
+  text-align: center;
+}
+
+.menu div:hover {
+  background-color: #2673cc;
+}
+
+/* Link dentro dos botões */
+.menu a {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .menu {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .menu div {
+    padding: 18px 25px;
+    flex: none;
+  }
+}

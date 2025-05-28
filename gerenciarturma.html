@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro de Turma</title>
+  <link rel="stylesheet" href="css/turma.css"/>
+</head>
+
+<body>
+  <div>
+    <a href="index.html">Inicio</a> |
+    <a href="gerenciarprofessor.html">Professor</a> |
+    <a href="gerenciaraluno.html">Aluno</a>
+  </div>
+
+  <h1>Cadastro de Turma</h1>
+
+  <!-- Botão para abrir o popup -->
+  <button id="open-turma-popup">Cadastrar Turma</button>
+
+  <!-- Popup de cadastro -->
+  <div id="turma-popup" style="display:none;">
+    <h2>Cadastrar Turma</h2>
+    <form id="turma-form-popup">
+      <label>Matéria:
+        <input type="text" name="materia" required />
+      </label><br>
+      <label>Descrição:
+        <input type="text" name="descricao" required />
+      </label><br>
+      <label>Ativo:
+        <select name="ativo" required>
+          <option value="true">Sim</option>
+          <option value="false">Não</option>
+        </select>
+      </label><br>
+      <label>ID do Professor:
+        <input type="number" name="professor_id" required />
+      </label><br>
+      <button type="submit">Cadastrar</button>
+      <button type="button" id="close-turma-popup">Fechar</button>
+    </form>
+  </div>
+
+  <hr/>
+
+  <button id="listar-turmas">Listar Turmas</button>
+  <button id="fechar-lista-turmas" style="display:none;">Fechar Lista</button>
+  <div id="turmas-lista"></div>
+
+  <!-- Popup de edição -->
+  <div id="edit-turma-popup" style="display:none;">
+    <h2>Editar Turma</h2>
+    <form id="update-turma-form">
+      <input type="hidden" id="turma-id" />
+      <label>Matéria:
+        <input type="text" id="update-materia" required />
+      </label><br>
+      <label>Descrição:
+        <input type="text" id="update-descricao" required />
+      </label><br>
+      <label>Ativo:
+        <select id="update-ativo" required>
+          <option value="true">Sim</option>
+          <option value="false">Não</option>
+        </select>
+      </label><br>
+      <label>ID do Professor:
+        <input type="number" id="update-professor_id" required />
+      </label><br>
+      <button type="submit">Atualizar</button>
+      <button type="button" id="close-edit-turma-popup">Fechar</button>
+    </form>
+  </div>
+
+  <script src="js/turmas.js"></script>
+</body>
+
+</html>
