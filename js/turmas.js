@@ -74,6 +74,28 @@ listarTurmasBtn.addEventListener("click", async () => {
       `
         )
         .join("");
+    
+  try {
+    const climaRes = await fetch("https://api.weatherapi.com/v1/current.json?key=f85f759535d648c38a720720250606&q=Sao Paulo&lang=pt")
+    if (!climaRes.ok) throw new Error("Erro ao obter clima.");
+
+    const clima = await climaRes.json();
+    const temp = clima.current.temp_c;
+    const vento = clima.current.wind_kph;
+    const condicao = clima.current.condition.text;
+
+    const climaHTML = `
+      <div style="background:#eef; padding:10px; margin-top:20px;">
+        <h3>🌦️ Clima Atual</h3>
+        Temperatura: ${temp}°C<br>
+        Vento: ${vento} km/h<br>
+        Condição: ${condicao}
+      </div>
+    `;
+    turmasLista.innerHTML += climaHTML;
+  } catch (err) {
+    console.error("Erro ao buscar clima:", err)
+  }
 
     turmasLista.style.display = "block";
     fecharListaTurmasBtn.style.display = "inline-block";
